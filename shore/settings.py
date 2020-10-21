@@ -142,13 +142,9 @@ CLOUDINARY_STORAGE = {
 # STORAGE CONFIGURATION IN CLOUDINARY
 # ===================================
 
-if (
-    CLOUDINARY_STORAGE["CLOUD_NAME"]
-    and CLOUDINARY_STORAGE["API_KEY"]
-    and CLOUDINARY_STORAGE["API_SECRET"]
-):
-    STATIC_URL = "/medicar-intmed/static/"
-    MEDIA_URL = "/medicar-intmed/media/"
+if CLOUDINARY_STORAGE["CLOUD_NAME"] and CLOUDINARY_STORAGE["API_KEY"] and CLOUDINARY_STORAGE["API_SECRET"]:
+    STATIC_URL = "/rsinet-shore/static/"
+    MEDIA_URL = "/rsinet-shore/media/"
 
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.RawMediaCloudinaryStorage"
     STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
