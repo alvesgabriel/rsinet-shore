@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 
+from shore.base.views import UserViewCreate
+
 router = routers.DefaultRouter()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(router.urls)),
     path("", include("rest_framework.urls", namespace="rest_framework")),
+    path("clients/", UserViewCreate.as_view(), name="clients"),
 ]
